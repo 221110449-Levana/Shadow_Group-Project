@@ -1,18 +1,20 @@
-// src/controllers/process.js
-const { getYouTubeData } = require("../services/yt");
-const { fetchTopComments } = require("../services/yt_helpers");
-const { cleanAIText, verifySecret, ytIdFromUrl } = require("../utils/utils");
+// backend/api/process.js
+import { getYouTubeData } from "../services/yt.js";
+import { fetchTopComments } from "../services/yt_helpers.js";
+import { cleanAIText, verifySecret, ytIdFromUrl } from "../utils/utils.js";
 
-/**
- * Endpoint POST /api/process
- */
-async function processVideo(req, res) {
+export default async function handler(req, res) {
   try {
+    if (req.method !== "POST") {
+      return res.status(405).json({ error: "Method not allowed" });
+    }
+
     const secret = req.headers["x-backend-secret"];
     if (!verifySecret(secret)) return res.status(401).json({ error: "Unauthorized" });
 
     const { videoUrls } = req.body;
-    if (!videoUrls || !videoUrls.length) return res.status(400).json({ error: "No video URLs provided" });
+    if (!videoUrls || !videoUrls.length)
+      return res.status(400).json({ error: "No video URLs provided" });
 
     const results = [];
 
@@ -23,10 +25,8 @@ async function processVideo(req, res) {
         continue;
       }
 
-      // Ambil data video
       const videoData = await getYouTubeData(videoId);
 
-      // Ambil komentar top
       const comments = await fetchTopComments(videoId);
       const cleanComments = comments.map((c) => cleanAIText(c));
 
@@ -37,12 +37,9 @@ async function processVideo(req, res) {
       });
     }
 
-    res.json({ results });
+    res.status(200).json({ results });
   } catch (err) {
     console.error("Error processing videos:", err.message);
     res.status(500).json({ error: err.message });
   }
 }
-
-module.exports = { processVideo };
-
