@@ -5,7 +5,6 @@ const { writeResultsToSheet } = require("./sheets");
 const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
 
-// Format angka ribuan
 function formatNumber(n) {
   if (!n) return "-";
   return Number(n).toLocaleString("id-ID");
@@ -88,3 +87,4 @@ async function processVideos(videoUrls) {
 }
 
 module.exports = { processVideos };
+
