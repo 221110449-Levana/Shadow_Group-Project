@@ -15,7 +15,6 @@ Kelompok 11 - Shadow Team
 
 Link OneDrive: https://mikroskilacid-my.sharepoint.com/personal/221111885_students_mikroskil_ac_id/_layouts/15/onedrive.aspx?id=%2Fpersonal%2F221111885%5Fstudents%5Fmikroskil%5Fac%5Fid%2FDocuments%2FKELOMPOK11%5FSHADOW%5FPROJECT&ga=1
 
-Link Video Penjelasan: 
 
 Petunjuk Penggunaan Aplikasi:
 1. Input link youtube yang dicopy dari search bar, lalu paste pada text boxnya
