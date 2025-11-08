@@ -2,19 +2,15 @@
   "name": "kelompok11-backend",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "vercel dev"
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.18.2",
     "googleapis": "^165.0.0",
     "openai": "^6.8.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
   }
 }
+
