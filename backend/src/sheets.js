@@ -10,7 +10,6 @@ const SHEET_ID = process.env.GOOGLE_SHEETS_ID;
 
 async function writeResultsToSheet(results) {
   try {
-    // 1️⃣ Ambil semua URL dari kolom B
     const existingUrlsRes = await sheets.spreadsheets.values.get({
       spreadsheetId: SHEET_ID,
       range: "VideoData!B2:B"
@@ -22,25 +21,24 @@ async function writeResultsToSheet(results) {
       const normalizedUrl = (r.url || "").trim();
       const existingIndex = existingUrls.indexOf(normalizedUrl);
 
-      // Data yang akan ditulis: kolom A=No otomatis, B-H data video
       const values = [[
-        '=ROW()-1',      // Kolom A: nomor otomatis
-        r.url,           // Kolom B
-        r.title,         // Kolom C
-        r.summary,       // Kolom D
-        r.sentiment,     // Kolom E
-        r.views,         // Kolom F
-        r.likes,         // Kolom G
-        r.comments       // Kolom H
+        '=ROW()-1',      
+        r.url,           
+        r.title,         
+        r.summary,       
+        r.sentiment,    
+        r.views,        
+        r.likes,         
+        r.comments      
       ]];
 
       if (existingIndex !== -1) {
         // 🔹 Update baris yang sudah ada
-        const rowNumber = existingIndex + 2; // +2 karena header di baris 1
+        const rowNumber = existingIndex + 2; 
         await sheets.spreadsheets.values.update({
           spreadsheetId: SHEET_ID,
           range: `VideoData!A${rowNumber}:H${rowNumber}`,
-          valueInputOption: "USER_ENTERED", // agar formula dievaluasi
+          valueInputOption: "USER_ENTERED", 
           requestBody: { values }
         });
         console.log(`♻️ Data diperbarui untuk URL: ${r.url}`);
@@ -49,7 +47,7 @@ async function writeResultsToSheet(results) {
         await sheets.spreadsheets.values.append({
           spreadsheetId: SHEET_ID,
           range: "VideoData!A:H",
-          valueInputOption: "USER_ENTERED", // formula akan dievaluasi
+          valueInputOption: "USER_ENTERED", 
           insertDataOption: "INSERT_ROWS",
           requestBody: { values }
         });
@@ -65,3 +63,4 @@ async function writeResultsToSheet(results) {
 }
 
 module.exports = { writeResultsToSheet };
+
