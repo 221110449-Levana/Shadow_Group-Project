@@ -13,7 +13,9 @@ Kelompok 11 - Shadow Team
 
 - Levana Devin - 221110449
 
-URL Aplikasi Live: 
+Link OneDrive: 
+
+Link Video Penjelasan: 
 
 Petunjuk Penggunaan Aplikasi:
 1. Input link youtube yang dicopy dari search bar, lalu paste pada text boxnya
