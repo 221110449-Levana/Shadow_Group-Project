@@ -25,4 +25,4 @@ Petunjuk Penggunaan Aplikasi:
 Petunjuk instalasi dan cara menjalankan proyek di lingkungan lokal:
 1. Pada terminal setiap folder Back-end dan Front-end jalankan perintah "npm install"
 2. Pada terminal folder Back-end jalankan perintah "npm run dev"
-3. Pada terminal folder Front-end jalankan perintah "npx react-scripts start", lalu otomatis akan terbuka pada local host perangkat kita.
+3. Pada terminal folder Front-end jalankan perintah "npm start", lalu otomatis akan terbuka pada local host perangkat kita.
