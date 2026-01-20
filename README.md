@@ -1,9 +1,9 @@
 # YouTube Analyzer - Kelompok 11
 
 Anggota:
-221111885 – Angelica Thomas
-221112655 – Angela Hasim
-221110449 – Levana Devin
+* 221111885 – Angelica Thomas
+* 221112655 – Angela Hasim
+* 221110449 – Levana Devin
 
 ### Deskripsi Singkat
 Proyek Ujian Akhir Semester (UAS) ini berfokus pada pengembangan dan analisis penerapan Deep Learning, khususnya Large Language Model (LLM), dalam menyelesaikan permasalahan nyata pada analisis konten digital YouTube. Proyek yang dikembangkan berupa sistem YouTube Analyzer berbasis web yang mampu melakukan ringkasan konten (summarization), analisis sentimen, dan evaluasi performa video secara otomatis.
